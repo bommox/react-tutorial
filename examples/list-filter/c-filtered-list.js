@@ -28,16 +28,19 @@ var FilteredList = React.createClass({
             var filter = this.state.filter;
             return (filter == '') 
                 ? true
-                : itemValue.toUpperCase().substr(0, filter.length) == filter.toUpperCase();
+                : itemValue.toUpperCase().indexOf(filter.toUpperCase()) > -1;
         }.bind(this));
+        var message = '';
+        if (this.props.items.length == 0 ) {
+            message = <div className="alert alert-info">No data</div>;
+        } else if (filteredItems.length == 0) {
+            message = <div className="alert alert-warning">No items for filter '{this.state.filter}'</div>;
+        }
         return (
             <div>
-                <input className="form-control" onChange={this.handleInput}/>
+                <input className="form-control" onChange={this.handleInput} placeholder="List filter..." />
                 <List items={filteredItems} onItemClick={this.handleItemClick} />
-                { filteredItems.length == 0
-                    ? <div className="alert alert-warning">No items for filter '{this.state.filter}'</div>
-                    : ''
-                }
+                {message}
             </div>
         );
     }

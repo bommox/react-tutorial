@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>    
+    <!--<script src="../libs-local/react.15.3.2.js"></script>
+    <script src="../libs-local/libs/react-dom.15.3.2.js"></script>
+    <script src="../libs-local/libs/babel.min.6.15.0.js"></script>-->
+    <script src="../../node_modules/react/dist/react.js"></script>
+    <script src="../../node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="../../node_modules/babel-standalone/babel.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    
+    <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="../component-count/c-count.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Ajax Sample</h1>
+      </div>
+      <div id="root"></div>
+    </div>
+    <script type="text/babel" src="../list-filter/c-list.js"></script>
+    <script type="text/babel" src="../list-filter/c-filtered-list.js"></script>
+    <script type="text/babel" src="../component-count/c-count.js"></script>
+    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel">
+    
+        ReactDOM.render(
+          <App/>,
+          document.getElementById('root')
+        );
+
+
+    </script>
+  </body>
+</html>
