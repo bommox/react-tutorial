@@ -1,0 +1,14 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "description": "React examples with a sandbox boilderplate.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Jorge Blom-Dahl (bommox)",
+  "license": "ISC"
+}
