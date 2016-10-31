@@ -2,7 +2,8 @@ var App = React.createClass({
 
     getInitialState : function() {
         return {
-            data : []
+            artists : [],
+            selectedArtist : undefined
         }
     },
 
@@ -12,7 +13,7 @@ var App = React.createClass({
             data: {  q: searchText,  type: 'artist'  },
             success: function (response) {
                 this.setState({
-                    data : response.artists.items
+                    artists : response.artists.items
                 });
             }.bind(this)
         });
@@ -24,8 +25,29 @@ var App = React.createClass({
         }
     },
 
+    handleArtistClick : function(idx) {
+        this.setState({
+            selectedArtist : this.state.artists[idx]
+        });
+    },
+
     render: function () {
-        var results = this.state.data;
+        var results = this.state.artists;
+        var artistInfo = (this.state.selectedArtist)
+            ? (
+                <div className="media">
+                    <div className="media-left">
+                        <a href="#">
+                            <img className="media-object img-circle" src={this.state.selectedArtist.images[0].url} width="64" height="64"/>
+                        </a>
+                    </div>
+                    <div className="media-body">
+                        <h4 className="media-heading">{this.state.selectedArtist.name}</h4>
+                        <p>Genres: {this.state.selectedArtist.genres.join(", ")}</p>
+                    </div>
+                </div>
+            )
+            : '';
         return (
             <div>
 
@@ -40,7 +62,13 @@ var App = React.createClass({
                 </div>
                 <hr/>
                 <div className="row">
-                    <FilteredList items={results.map(item => item.name)} />
+                    <h2>Artist information:</h2>
+                    {artistInfo}
+                </div>
+                <hr/>
+                <div className="row">
+                    <h2>Results:</h2>
+                    <FilteredList items={results.map(item => item.name)} onItemClick={this.handleArtistClick}/>
                 </div>
             </div>
 

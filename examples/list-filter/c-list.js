@@ -23,12 +23,12 @@ var List = React.createClass({
   	return (
       <ul className="list-group">
     	  {
-          this.props.items.map(function(itemValue) {
+          this.props.items.map(function(itemValue,idx) {
             return (
               <li 
-                key={itemValue} 
+                key={idx} 
                 className={this.state.selectedItem == itemValue ? "list-group-item active" : "list-group-item"} 
-                onClick={this.handleItemClick.bind(this,itemValue)}>{itemValue}</li>
+                onClick={this.handleItemClick.bind(this,idx)}>{itemValue}</li>
             )
           }.bind(this))
         }
