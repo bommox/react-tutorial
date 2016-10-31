@@ -10,12 +10,44 @@
     <script src="../../node_modules/react-dom/dist/react-dom.js"></script>
     <script src="../../node_modules/babel-standalone/babel.min.js"></script>
     
+    <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="c-count.css" />
     <link rel="stylesheet" href="app.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div class="container">
+      <div class="page-header">
+        <h1>Counter component</h1>
+      </div>
+      <div id="root1"></div>
+      <hr/>
+      <div id="root2"></div>
+      <hr/>
+      <div id="root3"></div>
+    </div>
     <script type="text/babel" src="c-count.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel" src="app-root-1.js"></script>
+    <script type="text/babel" src="app-root-2.js"></script>
+    <script type="text/babel" src="app-root-3.js"></script>
+    <script type="text/babel">
+    
+        ReactDOM.render(
+          <AppRoot1/>,
+          document.getElementById('root1')
+        );
+
+        ReactDOM.render(
+          <AppRoot2/>,
+          document.getElementById('root2')
+        );
+
+        ReactDOM.render(
+          <AppRoot3/>,
+          document.getElementById('root3')
+        );
+
+
+    </script>
   </body>
 </html>
