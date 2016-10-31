@@ -4,11 +4,20 @@
   "description": "React examples with a sandbox boilderplate.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "echo \">>>> Run a local server with 'npm run serve'\"",
+    "serve": "http-server -o"
   },
   "keywords": [
     "react"
   ],
   "author": "Jorge Blom-Dahl (bommox)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-standalone": "^6.18.1",
+    "http-server": "^0.9.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
 }

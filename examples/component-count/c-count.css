@@ -1,0 +1,35 @@
+.numcount {
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  position: relative;
+}
+.numcount span {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: scaleY(0);
+  transition: 0.5s ease transform;  
+  text-align: center;
+  line-height: 26px;
+  background-color: black;
+  color:white;
+  margin:3px;
+  border-radius: 2px;
+}
+.numcount span.active {
+  opacity: 1;  
+  transform: scaleY(1);
+}
+
+.numcount .active:after {
+  content: " ";
+    border-bottom: 14px solid rgba(255, 255, 255, 0.32);
+    display: block;
+    margin-top: -14px;
+    border-top: 1px solid #7d7d7d;
+}
