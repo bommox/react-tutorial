@@ -1,4 +1,4 @@
-#React Examples and getting started
+# React Examples and getting started
 
 This is a repository with some react examples.
 
@@ -15,7 +15,10 @@ If you are behind a proxy remember to add this to your npm configuration:
 
  `npm run serve`
 
+## List of examples
 
-
-
-
+ * Hello World
+ * Hello World Input
+ * Counter Component
+ * Filtered List Component
+ * Spotify Artist Search
