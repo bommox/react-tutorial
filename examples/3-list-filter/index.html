@@ -2,35 +2,37 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>    
-    <!--<script src="../libs-local/react.15.3.2.js"></script>
-    <script src="../libs-local/libs/react-dom.15.3.2.js"></script>
-    <script src="../libs-local/libs/babel.min.6.15.0.js"></script>-->
+    <title>Filtered List Component</title>
+    <!-- JS Libraries -->
     <script src="../../node_modules/react/dist/react.js"></script>
     <script src="../../node_modules/react-dom/dist/react-dom.js"></script>
     <script src="../../node_modules/babel-standalone/babel.min.js"></script>
-    
+    <!-- CSS -->
     <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
   </head>
   <body>
+
     <div class="container">
+
       <div class="page-header">
-        <h1>Filtered List component</h1>
+        <h1>Filtered List Component</h1>
       </div>
+
+      <!-- React container -->
       <div id="root"></div>
+
     </div>
+
+    <!-- App JS -->
     <script type="text/babel" src="c-list.js"></script>
     <script type="text/babel" src="c-filtered-list.js"></script>
     <script type="text/babel" src="app.js"></script>
-    <script type="text/babel">
-    
+    <script type="text/babel">    
         ReactDOM.render(
           <App/>,
           document.getElementById('root')
         );
-
-
     </script>
   </body>
 </html>
